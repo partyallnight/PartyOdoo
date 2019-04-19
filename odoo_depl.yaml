@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: odooapp
+  name: odooapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: odooapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: odooapp
+    spec:
+      containers:
+      - image: totticontainerregistry.azurecr.io/totti/odoo:v2
+        name: odoo
+        resources: {}
+      imagePullSecrets:
+      - name: regcred
+status: {}
