@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: db
+  name: db
+spec:
+  containers:
+  - image: postgres:9.6
+    name: db
+    resources: {}
+    env:
+    - name: POSTGRES_USER
+      value: odoo
+    - name: POSTGRES_PASSWORD
+      value: odoo
+    - name: POSTGRES_DB
+      value: postgres 
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
